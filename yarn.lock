@@ -292,18 +292,18 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@tanstack/history@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@tanstack/history/-/history-1.1.4.tgz#1439766a1b3806631d4bc033330de23163da8a76"
-  integrity sha512-H80reryZP3Ib5HzAo9zp1B8nbGzd+zOxe0Xt6bLYY2qtgCb+iIrVadDDt5ZnaFsrMBGbFTkEsS2ITVrAUao54A==
+"@tanstack/history@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/history/-/history-1.1.5.tgz#4cadb6221786f2e63c407cfab9096aa80a6a710d"
+  integrity sha512-/yfm298u2BGW+v5CRroh1wAVOzZrllG4FJy82an18PhIpGGQ78fQQfC7Lq4suO27dSKDyQ0HxWIrfaZSO7bHHA==
 
-"@tanstack/react-router@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.1.4.tgz#f0e1dd1736ae1b1d6a81e71436405cf2fc690a50"
-  integrity sha512-X+Nak7IxZfCHpH2GIZU9vDSpzpfDUmC30QzuYgwNRhWxGmmkDRF49d07CSc/CW5FQ9RvjECO/3dqw6X519E7HQ==
+"@tanstack/react-router@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.1.5.tgz#a53d262333e456805de96aae4552e1da1ca364be"
+  integrity sha512-VS4kZrDgrZxNtQwoDvQBhSZXG5zGFBj+mcwKW/co+ahI7j2+nQvj6omqEqUyc2NETFfUbA/UJse2ogZfItYR/w==
   dependencies:
     "@babel/runtime" "^7.16.7"
-    "@tanstack/history" "1.1.4"
+    "@tanstack/history" "1.1.5"
     "@tanstack/react-store" "^0.2.1"
     "@tanstack/store" "^0.1.3"
     tiny-invariant "^1.3.1"
@@ -317,13 +317,13 @@
     "@tanstack/store" "0.1.3"
     use-sync-external-store "^1.2.0"
 
-"@tanstack/router-devtools@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@tanstack/router-devtools/-/router-devtools-1.1.4.tgz#1155765d01823e574186db7eb17acc21048aeb6a"
-  integrity sha512-/chCH/ty386podf2vwON55pAJ9MQ+94vSv35tsF6LgUlTXCw8fYOL4WR1Fp6PgBsUXrPfDt3TMAueVqSitVpeA==
+"@tanstack/router-devtools@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/router-devtools/-/router-devtools-1.1.5.tgz#d79eac7b65b7cc7e22f25c8031b89c1c144cff60"
+  integrity sha512-axlNjWKblZg08OzpiVVfmj0+Nw3aC7AMDMX92DqFFS1/9Lkig/0vPchIdSs9sszyoJ1YdEsCKQmUMJkc44FlpA==
   dependencies:
     "@babel/runtime" "^7.16.7"
-    "@tanstack/react-router" "1.1.4"
+    "@tanstack/react-router" "1.1.5"
     date-fns "^2.29.1"
 
 "@tanstack/store@0.1.3", "@tanstack/store@^0.1.3":
