@@ -427,18 +427,18 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.9.4.tgz#16295ccae354707c9bc6842906bdeaad4f3ba7a5"
   integrity sha512-LfdGXCV9rdEify1oxlN9eamvDSjv9md9ZVMAbNHA87xqIfFCxImxan9qZ8+Un54iK2nnqPlbnSi4R54ONtbWBw==
 
-"@tanstack/history@1.3.5":
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/@tanstack/history/-/history-1.3.5.tgz#233edcac56b771f1dfbeb6703794605608dc5dd4"
-  integrity sha512-tfavJie2Ohc3S3qTsV5phuzKY2t283Wb+GreyQ8TgZdZ4UkkTwMh3aXDZHWSlw8oD/H4nY8LiPayiG8P8kq6hw==
+"@tanstack/history@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@tanstack/history/-/history-1.4.2.tgz#1aadf99ab1d382334cd45fd8c9441c553e035057"
+  integrity sha512-XjV0p7GM1u5/tHmjtwUC48ZmwSX2CTOZbatPEvglJBTd7feZksp55EIcSztWc2mpft7nm9nJGgV5/aEsRpXZRQ==
 
-"@tanstack/react-router@1.3.5":
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.3.5.tgz#2fb019c8faab474a056d1c5a21cdc89c42e10215"
-  integrity sha512-S23xRfvWt+jA3ynn6CiIzMfATfA0AFRu6ImFkyfzmBzwCFcHOEcscRdPkpCS8BVixGkAW5qywXMdl2BeyqnZRA==
+"@tanstack/react-router@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-1.4.2.tgz#bfdfa1460951894f327f90d39a51ce936cfe69b1"
+  integrity sha512-wRMVZAze6n/GgcE5FxbRyF1NeFP7TNmuypWAq+kEfAlHmgmQJ6d4H3ttpB9V9rTy9GDAh/+NPF0orl6gNTRGWQ==
   dependencies:
     "@babel/runtime" "^7.16.7"
-    "@tanstack/history" "1.3.5"
+    "@tanstack/history" "1.4.2"
     "@tanstack/react-store" "^0.2.1"
     "@tanstack/store" "^0.1.3"
     tiny-invariant "^1.3.1"
@@ -452,13 +452,13 @@
     "@tanstack/store" "0.1.3"
     use-sync-external-store "^1.2.0"
 
-"@tanstack/router-devtools@1.3.5":
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/@tanstack/router-devtools/-/router-devtools-1.3.5.tgz#d9b4b799f831f72681ccc361b5a49d71f6c3cdf2"
-  integrity sha512-4G50Z+rfVfxLK4l3YtHryb8YUoiIV3oAh7sSgePndwNwj6Znv8zXwv0ah+BpqPf79DXakcpAc2Law+8NNOKeFQ==
+"@tanstack/router-devtools@1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@tanstack/router-devtools/-/router-devtools-1.4.2.tgz#577b56a5653c1873e1254abb51bf52379d6d3aa8"
+  integrity sha512-fuPtE1IYU4bbNaFDtD9sJc/VLtN5iGBsYWgZvdOkJ3wmdcx91ezpalBqHDswjJo8e64kXxasFRvM6dPayukA/Q==
   dependencies:
     "@babel/runtime" "^7.16.7"
-    "@tanstack/react-router" "1.3.5"
+    "@tanstack/react-router" "1.4.2"
     date-fns "^2.29.1"
 
 "@tanstack/store@0.1.3", "@tanstack/store@^0.1.3":
