@@ -9,7 +9,8 @@ import {
   createRootRoute,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-import router from "./Routes";
+// import router from "./Routes";
+import router from "./routes/routes";
 
 declare module "@tanstack/react-router" {
   interface Register {
