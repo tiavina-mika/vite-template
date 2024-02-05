@@ -20,55 +20,85 @@ const articleLayout = createRoute({
   path: "/articles",
 });
 
-const routes = [
-  {
-    layout: layout,
-    path: "/",
-    component: Home,
-  },
-  {
-    layout: layout,
-    path: "/about",
-    component: About,
-  },
-  {
-    layout: articleLayout,
-    children: [
-      {
-        layout: articleLayout,
-        path: "/",
-        component: Articles,
-      },
-      {
-        layout: articleLayout,
-        path: "$id",
-        component: Article,
-      },
-    ],
-  },
-];
+// articleLayout.addChildren([
+//   ,
+//   createRoute({
+//     getParentRoute: () => articleLayout,
+//     component: Article,
+//     path: "$id",
+//   })
+// ])
 
-const paths = routes.map((route) => {
-  if (route.children && route.children.length > 0) {
-    return route.layout.addChildren(
-      route.children.map((child) =>
-        createRoute({
-          getParentRoute: () => child.layout,
-          path: child.path,
-          component: child.component,
-        }),
-      ),
-    );
-  }
-
-  return createRoute({
-    getParentRoute: () => route.layout,
-    path: route.path as string,
-    component: route.component,
-  });
+const articlesRoute = createRoute({
+  getParentRoute: () => articleLayout,
+  component: Articles,
+  path: "/",
 });
 
-const routeTree = layout.addChildren(paths);
+const articleRoute = createRoute({
+  getParentRoute: () => articleLayout,
+  component: Article,
+  path: "$id",
+});
+
+const aboutRoute = createRoute({
+  getParentRoute: () => layout,
+  component: About,
+  path: "/about",
+});
+
+// const routes = [
+//   {
+//     layout: layout,
+//     path: "/",
+//     component: Home,
+//   },
+//   {
+//     layout: layout,
+//     path: "/about",
+//     component: About,
+//   },
+//   {
+//     layout: articleLayout,
+//     children: [
+//       {
+//         layout: articleLayout,
+//         path: "/",
+//         component: Articles,
+//       },
+//       {
+//         layout: articleLayout,
+//         path: "$id",
+//         component: Article,
+//       },
+//     ],
+//   },
+// ];
+
+// const paths = routes.map((route) => {
+//   if (route.children && route.children.length > 0) {
+//     return route.layout.addChildren(
+//       route.children.map((child) =>
+//         createRoute({
+//           getParentRoute: () => child.layout,
+//           path: child.path,
+//           component: child.component,
+//         }),
+//       ),
+//     );
+//   }
+
+//   return createRoute({
+//     getParentRoute: () => route.layout,
+//     path: route.path as string,
+//     component: route.component,
+//   });
+// });
+
+const routeTree = layout.addChildren([
+  articleLayout.addChildren([articlesRoute, articleRoute]),
+  aboutRoute,
+]);
 
 const router = createRouter({ routeTree, defaultPreload: "intent" });
 export default router;

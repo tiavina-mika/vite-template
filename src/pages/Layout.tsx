@@ -17,7 +17,7 @@ const Layout = () => {
         </Link>
         <Link
           to="/articles/$id"
-          params={{ id: 3 }}
+          params={{ id: "3" }}
           className="[&.active]:font-bold"
         >
           Article
