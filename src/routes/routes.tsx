@@ -7,25 +7,25 @@ import {
   createRootRoute,
   createRoute,
 } from "@tanstack/react-router";
-import articleLayout from "./article.routes";
+import ArticleLayout from "./article.routes";
 
 export const layout = createRootRoute({
   component: Layout,
 });
 
-const homeRoute = createRoute({
+const HomeRoute = createRoute({
   getParentRoute: () => layout,
   component: Home,
   path: "/",
 });
 
-const aboutRoute = createRoute({
+const AboutRoute = createRoute({
   getParentRoute: () => layout,
   component: About,
   path: "/about",
 });
 
-const routeTree = layout.addChildren([homeRoute, articleLayout, aboutRoute]);
+const routeTree = layout.addChildren([HomeRoute, ArticleLayout, AboutRoute]);
 
 const router = createRouter({ routeTree, defaultPreload: "intent" });
 export default router;

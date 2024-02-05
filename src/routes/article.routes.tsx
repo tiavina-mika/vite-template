@@ -6,24 +6,24 @@ import {
 } from "@tanstack/react-router";
 import { layout } from "./routes";
 
-const articleLayout = createRoute({
+const ArticleLayout = createRoute({
   getParentRoute: () => layout,
   component: ArticlesLayout,
   path: "/articles",
 });
 
-const articlesRoute = createRoute({
-  getParentRoute: () => articleLayout,
+const ArticlesRoute = createRoute({
+  getParentRoute: () => ArticleLayout,
   component: Articles,
   path: "/",
 });
 
-const articleRoute = createRoute({
-  getParentRoute: () => articleLayout,
+export const ArticleRoute = createRoute({
+  getParentRoute: () => ArticleLayout,
   component: Article,
   path: "$id",
 });
 
-articleLayout.addChildren([articlesRoute, articleRoute])
+ArticleLayout.addChildren([ArticlesRoute, ArticleRoute])
 
-export default articleLayout;
+export default ArticleLayout;

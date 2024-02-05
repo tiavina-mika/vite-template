@@ -1,8 +1,8 @@
-import { useParams } from "@tanstack/react-router";
+import { ArticleRoute } from "../../routes/article.routes";
 import React from "react";
 
 const Article = () => {
-    const { id } = useParams({ strict: false })
+  const { id } = ArticleRoute.useParams();
   return <div>Article preview {id}</div>;
 };
 
