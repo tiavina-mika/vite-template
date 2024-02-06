@@ -2,6 +2,8 @@ import React from "react";
 import { Outlet, createRoute, redirect } from "@tanstack/react-router";
 
 import { appLayout } from "./routes";
+import { z } from "zod";
+import Login from "../pages/auth/Login";
 
 /**
  * add id to pathless route (sub layouts)
@@ -20,8 +22,11 @@ const publicLayout = createRoute({
 });
 
 const LoginRoute = createRoute({
+  validateSearch: z.object({
+    redirect: z.string().catch("/"),
+  }),
   getParentRoute: () => publicLayout,
-  component: () => <div>Login</div>,
+  component: Login,
   path: "/login",
 });
 

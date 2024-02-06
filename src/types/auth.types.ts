@@ -3,9 +3,9 @@ interface IUser {
   firstName?: string;
 }
 
-export interface IAuth {
+export interface IAuthContext {
   auth: {
-    isAuthenticated: true;
-    user?: IUser;
+    isAuthenticated: boolean;
+    user?: IUser | null;
   };
 }
