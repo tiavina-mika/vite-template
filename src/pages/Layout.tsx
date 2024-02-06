@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, Link } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+// import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 const Layout = () => {
   return (
@@ -25,7 +25,7 @@ const Layout = () => {
       </div>
       <hr />
       <Outlet />
-      <TanStackRouterDevtools />
+      {/* <TanStackRouterDevtools /> */}
     </>
   );
 };

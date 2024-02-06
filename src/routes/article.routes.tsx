@@ -3,27 +3,27 @@ import { createRoute } from "@tanstack/react-router";
 import ArticlesLayout from "../pages/articles/ArticlesLayout";
 import Articles from "../pages/articles/Articles";
 import Article from "../pages/articles/Article";
-import { appLayout } from "./routes";
+import { privateLayout } from "./private.routes";
 
-const ArticleLayout = createRoute({
-  getParentRoute: () => appLayout,
+const articlesLayout = createRoute({
+  getParentRoute: () => privateLayout,
   component: ArticlesLayout,
   path: "/articles",
 });
 
 const ArticlesRoute = createRoute({
-  getParentRoute: () => ArticleLayout,
+  getParentRoute: () => articlesLayout,
   component: Articles,
   path: "/",
 });
 
 export const ArticleRoute = createRoute({
-  getParentRoute: () => ArticleLayout,
+  getParentRoute: () => articlesLayout,
   component: Article,
   path: "$id",
   // loader: (params) => console.log(params),
 });
 
-ArticleLayout.addChildren([ArticlesRoute, ArticleRoute]);
+articlesLayout.addChildren([ArticlesRoute, ArticleRoute]);
 
-export default ArticleLayout;
+export default articlesLayout;
