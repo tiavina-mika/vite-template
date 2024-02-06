@@ -3,9 +3,8 @@ import Layout from "../pages/Layout";
 import Home from "../pages/Home";
 
 import { createRoute } from "@tanstack/react-router";
-// import ArticleLayout from "./article.routes";
 import { appLayout } from "./routes";
-import articlesLayout from "./article.routes";
+import articleRoutes, { articlesLayout } from "./article.routes";
 
 export const privateLayout = createRoute({
   id: "private",
@@ -27,7 +26,7 @@ const AboutRoute = createRoute({
 
 const privateRoutes = privateLayout.addChildren([
   HomeRoute,
-  articlesLayout,
+  articlesLayout.addChildren(articleRoutes),
   AboutRoute,
 ]);
 
