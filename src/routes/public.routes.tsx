@@ -12,13 +12,17 @@ import Login from "../pages/auth/Login";
 const publicLayout = createRoute({
   id: "public",
   getParentRoute: () => appLayout,
-  loader: () => console.log("public"),
   component: () => (
     <div>
       <h3>Public</h3>
       <Outlet />
     </div>
   ),
+  beforeLoad: ({ context }) => {
+    if (context.store?.isAuthenticated) {
+      throw redirect({ to: "/" });
+    }
+  },
 });
 
 const LoginRoute = createRoute({
@@ -29,6 +33,12 @@ const LoginRoute = createRoute({
   component: Login,
   path: "/login",
 });
+
+// const LogoutRoute = createRoute({
+//   getParentRoute: () => publicLayout,
+//   component: Login,
+//   path: "/login",
+// });
 
 const publicRoutes = publicLayout.addChildren([LoginRoute]);
 
