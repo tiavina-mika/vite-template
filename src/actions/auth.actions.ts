@@ -24,8 +24,7 @@ export const getStore = async (): Promise<IAuthContext["store"] | null> => {
 };
 
 export const getCurrentUser = async (): Promise<IUser | null | undefined> => {
-  await delay(1000);
-  const store = getStore();
+  const store = await getStore();
   if (!store) return null;
   return store.user;
 };
