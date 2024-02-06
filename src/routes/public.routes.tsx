@@ -34,12 +34,6 @@ const LoginRoute = createRoute({
   path: "/login",
 });
 
-// const LogoutRoute = createRoute({
-//   getParentRoute: () => publicLayout,
-//   component: Login,
-//   path: "/login",
-// });
-
 const publicRoutes = publicLayout.addChildren([LoginRoute]);
 
 export default publicRoutes;

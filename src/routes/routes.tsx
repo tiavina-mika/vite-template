@@ -26,7 +26,7 @@ const router = createRouter({
   routeTree,
   defaultPreload: "intent",
   context: {
-    auth: undefined!, // This will be set after we wrap the app in an AuthProvider
+    store: undefined!, // This will be set after we wrap the app in an AuthProvider
   },
 });
 export default router;
