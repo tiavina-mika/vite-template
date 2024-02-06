@@ -36,6 +36,7 @@ const AboutRoute = createRoute({
 
 const privateRoutes = privateLayout.addChildren([
   HomeRoute,
+  // use addChildren in the root because of type errors
   articlesLayout.addChildren(articleRoutes),
   AboutRoute,
 ]);
