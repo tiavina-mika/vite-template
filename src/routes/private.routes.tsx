@@ -6,6 +6,10 @@ import { createRoute } from "@tanstack/react-router";
 import { appLayout } from "./routes";
 import articleRoutes, { articlesLayout } from "./article.routes";
 
+/**
+ * add id to pathless route (sub layouts)
+ * @see: https://github.com/TanStack/router/discussions/696
+ */
 export const privateLayout = createRoute({
   id: "private",
   getParentRoute: () => appLayout,
