@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Outlet,
-  Link,
 } from "@tanstack/react-router";
 
 const ArticlesLayout = () => {

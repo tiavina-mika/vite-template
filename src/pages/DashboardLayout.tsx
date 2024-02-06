@@ -1,8 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "@tanstack/react-router";
-// import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
-const Layout = () => {
+const DashboardLayout = () => {
   return (
     <>
       <div className="p-2 flex gap-2">
@@ -25,9 +24,8 @@ const Layout = () => {
       </div>
       <hr />
       <Outlet />
-      {/* <TanStackRouterDevtools /> */}
     </>
   );
 };
 
-export default Layout;
+export default DashboardLayout;
