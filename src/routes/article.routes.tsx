@@ -2,10 +2,10 @@ import ArticlesLayout from "../pages/articles/ArticlesLayout";
 import Articles from "../pages/articles/Articles";
 import Article from "../pages/articles/Article";
 import { createRoute } from "@tanstack/react-router";
-import { layout } from "./routes";
+import { privateLayout } from "./private.routes";
 
 const ArticleLayout = createRoute({
-  getParentRoute: () => layout,
+  getParentRoute: () => privateLayout,
   component: ArticlesLayout,
   path: "/articles",
 });
@@ -13,7 +13,7 @@ const ArticleLayout = createRoute({
 const ArticlesRoute = createRoute({
   getParentRoute: () => ArticleLayout,
   component: Articles,
-  path: "/x",
+  path: "/",
 });
 
 export const ArticleRoute = createRoute({

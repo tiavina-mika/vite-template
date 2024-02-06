@@ -9,23 +9,28 @@ import {
 } from "@tanstack/react-router";
 import ArticleLayout from "./article.routes";
 
-export const layout = createRootRoute({
+export const privateLayout = createRootRoute({
   component: Layout,
+  onEnter: (match) => console.log("onEnter", match),
 });
 
 const HomeRoute = createRoute({
-  getParentRoute: () => layout,
+  getParentRoute: () => privateLayout,
   component: Home,
   path: "/",
 });
 
 const AboutRoute = createRoute({
-  getParentRoute: () => layout,
+  getParentRoute: () => privateLayout,
   component: About,
   path: "/about",
 });
 
-const routeTree = layout.addChildren([HomeRoute, ArticleLayout, AboutRoute]);
+const routeTree = privateLayout.addChildren([
+  HomeRoute,
+  ArticleLayout,
+  AboutRoute,
+]);
 
-const router = createRouter({ routeTree, defaultPreload: "intent" });
-export default router;
+const privateRouter = createRouter({ routeTree, defaultPreload: "intent" });
+export default privateRouter;

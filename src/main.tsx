@@ -10,11 +10,13 @@ import {
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 // import router from "./Routes";
-import router from "./routes/routes";
+// import router from "./routes/routes";
+import publicRouter from "./routes/public.routes";
+import privateRouter from "./routes/private.routes";
 
 declare module "@tanstack/react-router" {
   interface Register {
-    router: typeof router;
+    router: typeof privateRouter | typeof publicRouter;
   }
 }
 
@@ -23,7 +25,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <RouterProvider router={privateRouter} />
     </StrictMode>,
   );
 }
