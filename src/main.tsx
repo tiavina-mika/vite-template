@@ -2,21 +2,19 @@ import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import {
   Outlet,
-  RouterProvider,
+  // RouterProvider,
   Link,
   createRouter,
   createRoute,
   createRootRoute,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-// import router from "./Routes";
-// import router from "./routes/routes";
-import publicRouter from "./routes/public.routes";
-import privateRouter from "./routes/private.routes";
+import CustomRouterProvider from "./routes/RouterProvider";
+import router from "./routes/routes";
 
 declare module "@tanstack/react-router" {
   interface Register {
-    router: typeof privateRouter | typeof publicRouter;
+    router: typeof router;
   }
 }
 
@@ -25,7 +23,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={privateRouter} />
+      <CustomRouterProvider />
     </StrictMode>,
   );
 }

@@ -1,11 +1,12 @@
+import { createRoute } from "@tanstack/react-router";
+
 import ArticlesLayout from "../pages/articles/ArticlesLayout";
 import Articles from "../pages/articles/Articles";
 import Article from "../pages/articles/Article";
-import { createRoute } from "@tanstack/react-router";
-import { privateLayout } from "./private.routes";
+import { appLayout } from "./routes";
 
 const ArticleLayout = createRoute({
-  getParentRoute: () => privateLayout,
+  getParentRoute: () => appLayout,
   component: ArticlesLayout,
   path: "/articles",
 });
