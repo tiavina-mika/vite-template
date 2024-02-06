@@ -17,6 +17,7 @@ export const privateLayout = createRoute({
   component: DashboardLayout,
   beforeLoad: ({ context, location }) => {
     // If the user is logged out, redirect them to the login page
+    // ERROR: the store is not loaded
     if (!context.store?.isAuthenticated) {
       throw redirect({
         to: "/login",

@@ -16,7 +16,8 @@ export const logout = async () => {
   localStorage.removeItem("store");
 };
 
-export const getStore = (): IAuthContext["store"] | null => {
+export const getStore = async (): Promise<IAuthContext["store"] | null> => {
+  await delay(1000);
   const store = localStorage.getItem("store");
   if (!store) return null;
   return JSON.parse(store);

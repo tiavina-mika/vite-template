@@ -1,12 +1,11 @@
 import React, { useState, FormEvent } from "react";
-import { getRouteApi, useNavigate, useRouter } from "@tanstack/react-router";
+import { getRouteApi, useNavigate } from "@tanstack/react-router";
 import { login } from "../../actions/auth.actions";
 
 const routeApi = getRouteApi("/public/login");
 
 const Login = () => {
   const navigate = useNavigate();
-  const router = useRouter();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [name, setName] = useState("");
@@ -19,9 +18,8 @@ const Login = () => {
 
     // mock actions
     await login({ lastName: name });
-    router.history.push(search.redirect);
 
-    // navigate({ to: search.redirect });
+    navigate({ to: search.redirect });
     setIsSubmitting(false);
   };
 
