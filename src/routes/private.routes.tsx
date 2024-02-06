@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 
 import { createRoute, redirect } from "@tanstack/react-router";
 import { appLayout } from "./routes";
-import articleRoutes, { articlesLayout } from "./article.routes";
+import articleRoutes, { articlesLayout } from "./private/article.routes";
 import { isAuth } from "../constants";
 
 /**
