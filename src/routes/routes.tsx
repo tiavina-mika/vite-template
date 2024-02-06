@@ -9,18 +9,9 @@ import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 import publicRoutes from "./public.routes";
 import privateRoutes from "./private.routes";
-import { IAuth } from "../types/auth.types";
+import { IAuthContext } from "../types/auth.types";
 
-// export const appLayout = createRootRoute({
-//   component: () => (
-//     <>
-//       <Outlet />
-//       <TanStackRouterDevtools />
-//     </>
-//   ),
-// });
-
-export const appLayout = createRootRouteWithContext<IAuth>()({
+export const appLayout = createRootRouteWithContext<IAuthContext>()({
   component: () => (
     <>
       <Outlet />
