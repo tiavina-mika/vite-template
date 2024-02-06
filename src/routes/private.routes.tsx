@@ -2,9 +2,10 @@ import About from "../pages/About";
 import Layout from "../pages/Layout";
 import Home from "../pages/Home";
 
-import { createRoute } from "@tanstack/react-router";
+import { createRoute, redirect } from "@tanstack/react-router";
 import { appLayout } from "./routes";
 import articleRoutes, { articlesLayout } from "./article.routes";
+import { isAuth } from "../constants";
 
 /**
  * add id to pathless route (sub layouts)
@@ -14,6 +15,11 @@ export const privateLayout = createRoute({
   id: "private",
   getParentRoute: () => appLayout,
   component: Layout,
+  loader: (): void => {
+    if (!isAuth) {
+      redirect({ to: "/login", throw: true });
+    }
+  },
 });
 
 const HomeRoute = createRoute({
