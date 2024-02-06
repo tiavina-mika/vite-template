@@ -1,5 +1,5 @@
 import About from "../pages/About";
-import Layout from "../pages/Layout";
+import DashboardLayout from "../pages/DashboardLayout";
 import Home from "../pages/Home";
 
 import { createRoute, redirect } from "@tanstack/react-router";
@@ -14,7 +14,7 @@ import { isAuth } from "../constants";
 export const privateLayout = createRoute({
   id: "private",
   getParentRoute: () => appLayout,
-  component: Layout,
+  component: DashboardLayout,
   loader: (): void => {
     if (!isAuth) {
       redirect({ to: "/login", throw: true });
