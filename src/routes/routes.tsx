@@ -4,12 +4,16 @@ import {
   createRootRoute,
   Outlet,
   createRootRouteWithContext,
+  createRoute,
+  redirect,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 import publicRoutes from "./public.routes";
 import privateRoutes from "./private.routes";
 import { IAuthContext } from "../types/auth.types";
+import { logout } from "../actions/auth.actions";
+import Loading from "../components/Loading";
 
 export const appLayout = createRootRouteWithContext<IAuthContext>()({
   component: () => (
@@ -20,7 +24,28 @@ export const appLayout = createRootRouteWithContext<IAuthContext>()({
   ),
 });
 
-const routeTree = appLayout.addChildren([publicRoutes, privateRoutes]);
+const LogoutRoute = createRoute({
+  path: "/logout",
+  getParentRoute: () => appLayout,
+  component: () => <Loading />,
+  beforeLoad: (): void => {
+    logout();
+    redirect({
+      to: "/login",
+      throw: true,
+      search: {
+        // the login url need a redirection path
+        redirect: "/",
+      },
+    });
+  },
+});
+
+const routeTree = appLayout.addChildren([
+  publicRoutes,
+  privateRoutes,
+  LogoutRoute,
+]);
 
 const router = createRouter({
   routeTree,

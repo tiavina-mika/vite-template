@@ -24,6 +24,9 @@ const DashboardLayout = () => {
         <Link to="/profile" className="[&.active]:font-bold">
           Profile
         </Link>
+        <Link to="/logout" className="[&.active]:font-bold">
+          Logout
+        </Link>
       </div>
       <hr />
       <div className="p-2">
