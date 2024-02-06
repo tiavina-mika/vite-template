@@ -1,15 +1,18 @@
 import { IAuthContext, IUser } from "../types/auth.types";
+import { delay } from "../utils/utils";
 
-export const login = (user: IUser) => {
+export const login = async (user: IUser) => {
   const values: IAuthContext["store"] = {
     isAuthenticated: true,
     user,
   };
 
+  await delay(2000);
   localStorage.setItem("store", JSON.stringify(values));
 };
 
-export const logout = () => {
+export const logout = async () => {
+  await delay(1000);
   localStorage.removeItem("store");
 };
 
@@ -19,7 +22,8 @@ export const getStore = (): IAuthContext["store"] | null => {
   return JSON.parse(store);
 };
 
-export const getCurrentUser = (): IUser | null | undefined => {
+export const getCurrentUser = async (): Promise<IUser | null | undefined> => {
+  await delay(1000);
   const store = getStore();
   if (!store) return null;
   return store.user;

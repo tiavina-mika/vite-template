@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { getCurrentUser } from "../../actions/auth.actions";
+import { IUser } from "../../types/auth.types";
 
 const Profile = () => {
-  const user = getCurrentUser();
+  const [user, setUser] = useState<IUser | null>(null);
+
+  useEffect(() => {
+    const init = async () => {
+      const currentUser = await getCurrentUser();
+      if (!currentUser) return;
+      setUser(currentUser);
+    }
+
+    init();
+  }, []);
 
   return (
     <div className="space-y-2">

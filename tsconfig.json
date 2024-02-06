@@ -3,5 +3,6 @@
     "strict": true,
     "esModuleInterop": true,
     "jsx": "react",
-  },
+    "target": "es2015"
+  }
 }

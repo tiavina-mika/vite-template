@@ -12,14 +12,16 @@ const Login = () => {
 
   const search = routeApi.useSearch();
 
-  const handleLogin = (evt: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     setIsSubmitting(true);
 
     // mock actions
-    login({ lastName: name });
+    await login({ lastName: name });
+    console.log("login", search.redirect);
 
     navigate({ to: search.redirect });
+    setIsSubmitting(false);
   };
 
   return (

@@ -28,8 +28,8 @@ const LogoutRoute = createRoute({
   path: "/logout",
   getParentRoute: () => appLayout,
   component: () => <Loading />,
-  beforeLoad: (): void => {
-    logout();
+  beforeLoad: async (): Promise<void> => {
+    await logout();
     redirect({
       to: "/login",
       throw: true,
