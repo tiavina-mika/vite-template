@@ -1,10 +1,11 @@
 import React from "react";
 import { RouterProvider as TanstackRouterProvider } from "@tanstack/react-router";
 import router from "./routes";
-import { auth } from "../constants";
+import { getStore } from "../actions/auth.actions";
 
 const RouterProvider = () => {
-  return <TanstackRouterProvider router={router} context={{ auth }} />;
+  const store = getStore();
+  return <TanstackRouterProvider router={router} context={{ store }} />;
 };
 
 export default RouterProvider;

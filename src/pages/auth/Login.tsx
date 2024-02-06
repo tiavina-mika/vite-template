@@ -1,6 +1,6 @@
 import React, { useState, FormEvent } from "react";
 import { getRouteApi, useNavigate } from "@tanstack/react-router";
-import { auth } from "../../constants";
+import { login } from "../../actions/auth.actions";
 
 const routeApi = getRouteApi("/public/login");
 
@@ -16,10 +16,8 @@ const Login = () => {
     evt.preventDefault();
     setIsSubmitting(true);
 
-    auth.isAuthenticated = true;
-    auth.user = {
-        lastName: name
-    };
+    // mock actions
+    login({ lastName: name });
 
     navigate({ to: search.redirect });
   };

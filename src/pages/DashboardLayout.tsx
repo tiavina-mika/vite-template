@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet, Link } from "@tanstack/react-router";
-import { auth } from "../constants";
 
 const DashboardLayout = () => {
   return (
@@ -22,10 +21,12 @@ const DashboardLayout = () => {
         >
           Article
         </Link>
+        <Link to="/profile" className="[&.active]:font-bold">
+          Profile
+        </Link>
       </div>
       <hr />
-      <div>
-        <span>{auth.user ? auth.user.lastName : "No user"}</span>
+      <div className="p-2">
         <Outlet />
       </div>
     </>

@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import { createRoute, redirect } from "@tanstack/react-router";
 import { appLayout } from "./routes";
 import articleRoutes, { articlesLayout } from "./private/article.routes";
+import Profile from "../pages/auth/Profile";
 
 /**
  * add id to pathless route (sub layouts)
@@ -15,7 +16,7 @@ export const privateLayout = createRoute({
   getParentRoute: () => appLayout,
   component: DashboardLayout,
   beforeLoad: ({ context, location }) => {
-    if (!context.auth.isAuthenticated) {
+    if (!context.store?.isAuthenticated) {
       throw redirect({
         to: "/login",
         search: {
@@ -38,11 +39,18 @@ const AboutRoute = createRoute({
   path: "/about",
 });
 
+const ProfileRoute = createRoute({
+  getParentRoute: () => privateLayout,
+  component: Profile,
+  path: "/profile",
+});
+
 const privateRoutes = privateLayout.addChildren([
   HomeRoute,
   // use addChildren in the root because of type errors
   articlesLayout.addChildren(articleRoutes),
   AboutRoute,
+  ProfileRoute,
 ]);
 
 export default privateRoutes;

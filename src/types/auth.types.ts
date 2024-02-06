@@ -1,11 +1,11 @@
-interface IUser {
+export interface IUser {
   lastName: string;
   firstName?: string;
 }
 
 export interface IAuthContext {
-  auth: {
+  store: {
     isAuthenticated: boolean;
     user?: IUser | null;
-  };
+  } | null;
 }
