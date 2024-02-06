@@ -32,11 +32,11 @@ const LogoutRoute = createRoute({
     await logout();
     redirect({
       to: "/login",
-      throw: true,
-      search: {
-        // the login url need a redirection path
-        redirect: "/",
-      },
+      // throw: true,
+      // search: {
+      //   // the login url need a redirection path
+      //   redirect: "/",
+      // },
     });
   },
 });

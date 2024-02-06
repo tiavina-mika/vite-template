@@ -27,7 +27,8 @@ const publicLayout = createRoute({
 
 const LoginRoute = createRoute({
   validateSearch: z.object({
-    redirect: z.string().catch("/"),
+    redirect: z.string().optional(),
+    // redirect: z.string().catch("/"),
   }),
   getParentRoute: () => publicLayout,
   component: Login,
