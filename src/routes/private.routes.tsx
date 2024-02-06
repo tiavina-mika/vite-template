@@ -15,9 +15,14 @@ export const privateLayout = createRoute({
   id: "private",
   getParentRoute: () => appLayout,
   component: DashboardLayout,
-  loader: (): void => {
-    if (!isAuth) {
-      redirect({ to: "/login", throw: true });
+  beforeLoad: ({ context, location }) => {
+    if (!context.auth.isAuthenticated) {
+      throw redirect({
+        to: "/login",
+        search: {
+          redirect: location.href,
+        },
+      });
     }
   },
 });

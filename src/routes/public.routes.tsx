@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet, createRoute, redirect } from "@tanstack/react-router";
 
 import { appLayout } from "./routes";
-import { isAuth } from "../constants";
 
 /**
  * add id to pathless route (sub layouts)
@@ -11,11 +10,7 @@ import { isAuth } from "../constants";
 const publicLayout = createRoute({
   id: "public",
   getParentRoute: () => appLayout,
-  loader: (): void => {
-    if (isAuth) {
-      redirect({ to: "/", throw: true });
-    }
-  },
+  loader: () => console.log("public"),
   component: () => (
     <div>
       <h3>Public</h3>
