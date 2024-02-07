@@ -1,19 +1,21 @@
 import { IAuthContext, IUser } from "../types/auth.types";
 import { delay } from "../utils/utils";
 
+// mock data
+export const store: IAuthContext["store"] = {
+  isAuthenticated: false,
+  user: null,
+};
 export const login = async (user: IUser) => {
-  const values: IAuthContext["store"] = {
-    isAuthenticated: true,
-    user,
-  };
-
   await delay(2000);
-  localStorage.setItem("store", JSON.stringify(values));
+  store.isAuthenticated = true;
+  store.user = user;
 };
 
 export const logout = async () => {
   await delay(1000);
-  localStorage.removeItem("store");
+  store.isAuthenticated = false;
+  store.user = null;
 };
 
 export const getStore = async (): Promise<IAuthContext["store"] | null> => {
@@ -24,7 +26,6 @@ export const getStore = async (): Promise<IAuthContext["store"] | null> => {
 };
 
 export const getCurrentUser = async (): Promise<IUser | null | undefined> => {
-  const store = await getStore();
-  if (!store) return null;
+  await delay(1000);
   return store.user;
 };
