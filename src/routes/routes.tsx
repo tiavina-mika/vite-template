@@ -18,7 +18,7 @@ export const appLayout = createRootRouteWithContext<IAuthContext>()({
   component: () => (
     <>
       <Outlet />
-      <TanStackRouterDevtools />
+      <TanStackRouterDevtools position="bottom-right" />
     </>
   ),
 });
