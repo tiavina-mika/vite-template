@@ -5,26 +5,26 @@ const DashboardLayout = () => {
   return (
     <>
       <div className="p-2 flex gap-2">
-        <Link to="/" className="[&.active]:font-bold">
+        <Link to="/" activeProps={{ className: `font-bold` }}>
           Home
         </Link>{" "}
-        <Link to="/about" className="[&.active]:font-bold">
+        <Link to="/about" activeProps={{ className: `font-bold` }}>
           About
         </Link>
-        <Link to="/articles" className="[&.active]:font-bold">
+        <Link to="/articles" activeProps={{ className: `font-bold` }}>
           Articles
         </Link>
         <Link
           to="/articles/$id"
           params={{ id: "3" }}
-          className="[&.active]:font-bold"
+          activeProps={{ className: `font-bold` }}
         >
           Article
         </Link>
-        <Link to="/profile" className="[&.active]:font-bold">
+        <Link to="/profile" activeProps={{ className: `font-bold` }}>
           Profile
         </Link>
-        <Link to="/logout" className="[&.active]:font-bold">
+        <Link to="/logout" activeProps={{ className: `font-bold` }}>
           Logout
         </Link>
       </div>
