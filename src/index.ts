@@ -1,2 +1,3 @@
 update settings
-update settings
+update seupdate settings
+ttings
