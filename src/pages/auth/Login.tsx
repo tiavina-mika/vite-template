@@ -1,11 +1,13 @@
 import React, { useState, FormEvent } from "react";
-import { getRouteApi, useNavigate } from "@tanstack/react-router";
+import { getRouteApi, useNavigate, useRouterState } from "@tanstack/react-router";
 import { login } from "../../actions/auth.actions";
 
 const routeApi = getRouteApi("/public/login");
 
 const Login = () => {
   const navigate = useNavigate();
+  const { location } = useRouterState();
+  console.log('location', location)
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [name, setName] = useState("");
