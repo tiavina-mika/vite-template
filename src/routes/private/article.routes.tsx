@@ -4,6 +4,7 @@ import ArticlesLayout from "../../pages/articles/ArticlesLayout";
 import Articles from "../../pages/articles/Articles";
 import Article from "../../pages/articles/Article";
 import { privateLayout } from "../private.routes";
+import { getArticles } from "../../actions/article.actions";
 
 export const articlesLayout = createRoute({
   getParentRoute: () => privateLayout,
@@ -11,8 +12,9 @@ export const articlesLayout = createRoute({
   path: "/articles",
 });
 
-const ArticlesRoute = createRoute({
+export const ArticlesRoute = createRoute({
   getParentRoute: () => articlesLayout,
+  loader: getArticles,
   component: Articles,
   path: "/",
 });
