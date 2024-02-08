@@ -25,7 +25,7 @@ const publicLayout = createRoute({
   },
 });
 
-const LoginRoute = createRoute({
+const loginRoute = createRoute({
   validateSearch: z.object({
     redirect: z.string().optional(),
     // redirect: z.string().catch("/"),
@@ -35,6 +35,6 @@ const LoginRoute = createRoute({
   path: "/login",
 });
 
-const publicRoutes = publicLayout.addChildren([LoginRoute]);
+const publicRoutes = publicLayout.addChildren([loginRoute]);
 
 export default publicRoutes;

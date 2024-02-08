@@ -14,14 +14,14 @@ export const articlesLayout = createRoute({
   path: "/articles",
 });
 
-export const ArticlesRoute = createRoute({
+export const articlesRoute = createRoute({
   getParentRoute: () => articlesLayout,
   loader: getArticles,
   component: Articles,
   path: "/",
 });
 
-export const ArticleRoute = createRoute({
+export const articleRoute = createRoute({
   parseParams: (params: IArticleParams) => ({
     id: z.string().parse(params.id),
   }),
@@ -31,6 +31,6 @@ export const ArticleRoute = createRoute({
   path: "$id",
 });
 
-const articleRoutes = [ArticlesRoute, ArticleRoute];
+const articleRoutes = [articlesRoute, articleRoute];
 
 export default articleRoutes;

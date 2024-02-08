@@ -23,7 +23,7 @@ export const appLayout = createRootRouteWithContext<IAuthContext>()({
   ),
 });
 
-const LogoutRoute = createRoute({
+const logoutRoute = createRoute({
   path: "/logout",
   getParentRoute: () => appLayout,
   component: () => <Loading />,
@@ -43,7 +43,7 @@ const LogoutRoute = createRoute({
 const routeTree = appLayout.addChildren([
   publicRoutes,
   privateRoutes,
-  LogoutRoute,
+  logoutRoute,
 ]);
 
 const router = createRouter({
