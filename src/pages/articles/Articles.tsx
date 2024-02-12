@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
 
-import { ArticlesRoute } from "../../routes/private/article.routes";
+import { articlesRoute } from "../../routes/private/article.routes";
 import { IArticle } from "../../types/article.types";
 
 const Articles = () => {
   // this data is fetched from the route loader func
-  const articles = ArticlesRoute.useLoaderData();
+  const articles = articlesRoute.useLoaderData();
 
   return (
     <div className="container flex justify-center">

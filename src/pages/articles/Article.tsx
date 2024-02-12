@@ -1,11 +1,11 @@
 import React from "react";
 
-import { ArticleRoute } from "../../routes/private/article.routes";
+import { articleRoute } from "../../routes/private/article.routes";
 
 const Article = () => {
-  const { id } = ArticleRoute.useParams();
+  const { id } = articleRoute.useParams();
   // this data is fetched from the route loader func
-  const article = ArticleRoute.useLoaderData();
+  const article = articleRoute.useLoaderData();
 
   return (
     <div className="space-y-3">

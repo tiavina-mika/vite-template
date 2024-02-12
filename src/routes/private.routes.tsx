@@ -38,7 +38,7 @@ const homeRoute = createRoute({
   path: "/",
 });
 
-const AboutRoute = createRoute({
+const aboutRoute = createRoute({
   getParentRoute: () => privateLayout,
   component: About,
   path: "/about",
@@ -54,7 +54,7 @@ const privateRoutes = privateLayout.addChildren([
   homeRoute,
   // use addChildren in the root because of type errors
   articlesLayout.addChildren(articleRoutes),
-  AboutRoute,
+  aboutRoute,
   profileRoute,
 ]);
 
